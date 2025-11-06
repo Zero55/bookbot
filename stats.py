@@ -9,5 +9,14 @@ def number_of_each_char(texts):
         count_dict[lower] = count_dict.get(lower, 0) + 1
     return count_dict
 
-def sort_each_char(chars):
-    
+def sort_on(items):
+    return items["num"]
+
+def listed_dict(dict):
+    dict_list = []
+    for char, num in dict.items():
+        if char.isalpha():
+            dict_list.append({"char": char, "num": num})
+    dict_list.sort(key=sort_on, reverse=True)
+    return dict_list
+
